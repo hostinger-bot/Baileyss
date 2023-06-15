@@ -1,10 +1,10 @@
 
 
 {
-  "name": "baileys",
-  "version": "7.0.1",
+  "name": "baileys-api",
+  "version": "7.0.2",
   "description": "WhatsApp Api",
-  "homepage": "https://github.com/hostinger-bot/Baileyss",
+  "homepage": "https://github.com/hostinger-bot/Baileys",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "keywords": [
@@ -35,7 +35,7 @@
   "author": "hostinger-bot",
   "license": "MIT",
   "repository": {
-    "url": "git@github.com:hostinger-bot/Baileyss.git"
+    "url": "git@github.com:hostinger-bot/Baileys.git"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.3",
