@@ -2,7 +2,7 @@
 
 {
   "name": "baileys-api",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "description": "WhatsApp Api",
   "homepage": "https://github.com/hostinger-bot/Baileys",
   "main": "lib/index.js",
