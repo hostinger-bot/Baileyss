@@ -113,10 +113,6 @@ message BotAvatarMetadata {
     
 }
 
-message BotData {
-    required MessageKey targetMessageKey = 1;
-}
-
 message BotMetadata {
     optional BotAvatarMetadata avatarMetadata = 1;
 }
@@ -584,15 +580,6 @@ message ExternalBlobReference {
     optional uint64 fileSizeBytes = 4;
     optional bytes fileSha256 = 5;
     optional bytes fileEncSha256 = 6;
-}
-
-message FutureMessageData {
-    optional BotData botData = 1;
-}
-
-message FutureproofMessageSecretMessage {
-    required MessageSecretMessage messageSecretMessage = 1;
-    required FutureMessageData futureMessageData = 2;
 }
 
 message GlobalSettings {
@@ -2055,6 +2042,41 @@ message Pushname {
     optional string pushname = 2;
 }
 
+message QP {
+    enum ClauseType {
+        AND = 1;
+        OR = 2;
+        NOR = 3;
+    }
+    message Filter {
+        required string filterName = 1;
+        repeated QP.FilterParameters parameters = 2;
+        optional QP.FilterResult filterResult = 3;
+        required QP.FilterClientNotSupportedConfig clientNotSupportedConfig = 4;
+    }
+    
+    message FilterClause {
+        required QP.ClauseType clauseType = 1;
+        repeated QP.FilterClause clauses = 2;
+        repeated QP.Filter filters = 3;
+    }
+    
+    enum FilterClientNotSupportedConfig {
+        PASS_BY_DEFAULT = 1;
+        FAIL_BY_DEFAULT = 2;
+    }
+    message FilterParameters {
+        optional string key = 1;
+        optional string value = 2;
+    }
+    
+    enum FilterResult {
+        TRUE = 1;
+        FALSE = 2;
+        UNKNOWN = 3;
+    }
+}
+
 message Reaction {
     optional MessageKey key = 1;
     optional string text = 2;
@@ -2634,7 +2656,6 @@ message WebMessageInfo {
     optional string originalSelfAuthorUserJidString = 51;
     optional uint64 revokeMessageTimestamp = 52;
     optional PinInChat pinInChat = 54;
-    optional FutureproofMessageSecretMessage futureproofMessageSecretMessage = 55;
     enum BizPrivacyStatus {
         E2EE = 0;
         FB = 2;
