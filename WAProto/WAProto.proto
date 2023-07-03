@@ -101,16 +101,7 @@ message BizIdentityInfo {
 
 message BotAvatarMetadata {
     optional uint32 sentiment = 1;
-    repeated PlaybackMetadata dynamicVideoList = 2;
-    message PlaybackMetadata {
-        optional string sdProgressiveUrl = 1;
-        optional string hdProgressiveUrl = 2;
-        optional string dashManifest = 3;
-        optional uint32 sentiment = 4;
-        optional uint32 durationMs = 5;
-        optional int64 videoID = 6;
-    }
-    
+    optional string behaviorGraph = 2;
 }
 
 message BotMetadata {
@@ -401,6 +392,7 @@ message ContextInfo {
     optional bool isSampled = 39;
     repeated GroupMention groupMentions = 40;
     optional UTMInfo utm = 41;
+    optional ForwardedNewsletterMessageInfo forwardedNewsletterMessageInfo = 43;
     message AdReplyInfo {
         optional string advertiserName = 1;
         optional MediaType mediaType = 2;
@@ -433,6 +425,11 @@ message ContextInfo {
             IMAGE = 1;
             VIDEO = 2;
         }
+    }
+    
+    message ForwardedNewsletterMessageInfo {
+        optional string newsletterJid = 1;
+        optional int32 serverMessageId = 2;
     }
     
     message UTMInfo {
@@ -551,15 +548,24 @@ message DeviceProps {
         AR_WRIST = 19;
         AR_DEVICE = 20;
         UWP = 21;
+        VR = 22;
     }
 }
 
 message DisappearingMode {
     optional Initiator initiator = 1;
+    optional Trigger trigger = 2;
+    optional string initiatorDeviceJid = 3;
     enum Initiator {
         CHANGED_IN_CHAT = 0;
         INITIATED_BY_ME = 1;
         INITIATED_BY_OTHER = 2;
+    }
+    enum Trigger {
+        UNKNOWN = 0;
+        CHAT_SETTING = 1;
+        ACCOUNT_SETTING = 2;
+        BULK_CHANGE = 3;
     }
 }
 
