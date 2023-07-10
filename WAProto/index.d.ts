@@ -1298,8 +1298,8 @@ export namespace proto {
         /** BotAvatarMetadata sentiment */
         sentiment?: (number|null);
 
-        /** BotAvatarMetadata dynamicVideoList */
-        dynamicVideoList?: (proto.BotAvatarMetadata.IPlaybackMetadata[]|null);
+        /** BotAvatarMetadata behaviorGraph */
+        behaviorGraph?: (string|null);
     }
 
     /** Represents a BotAvatarMetadata. */
@@ -1314,8 +1314,8 @@ export namespace proto {
         /** BotAvatarMetadata sentiment. */
         public sentiment: number;
 
-        /** BotAvatarMetadata dynamicVideoList. */
-        public dynamicVideoList: proto.BotAvatarMetadata.IPlaybackMetadata[];
+        /** BotAvatarMetadata behaviorGraph. */
+        public behaviorGraph: string;
 
         /**
          * Creates a new BotAvatarMetadata instance using the specified properties.
@@ -1393,136 +1393,6 @@ export namespace proto {
          * @returns The default type url
          */
         public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotAvatarMetadata {
-
-        /** Properties of a PlaybackMetadata. */
-        interface IPlaybackMetadata {
-
-            /** PlaybackMetadata sdProgressiveUrl */
-            sdProgressiveUrl?: (string|null);
-
-            /** PlaybackMetadata hdProgressiveUrl */
-            hdProgressiveUrl?: (string|null);
-
-            /** PlaybackMetadata dashManifest */
-            dashManifest?: (string|null);
-
-            /** PlaybackMetadata sentiment */
-            sentiment?: (number|null);
-
-            /** PlaybackMetadata durationMs */
-            durationMs?: (number|null);
-
-            /** PlaybackMetadata videoID */
-            videoID?: (number|Long|null);
-        }
-
-        /** Represents a PlaybackMetadata. */
-        class PlaybackMetadata implements IPlaybackMetadata {
-
-            /**
-             * Constructs a new PlaybackMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: proto.BotAvatarMetadata.IPlaybackMetadata);
-
-            /** PlaybackMetadata sdProgressiveUrl. */
-            public sdProgressiveUrl: string;
-
-            /** PlaybackMetadata hdProgressiveUrl. */
-            public hdProgressiveUrl: string;
-
-            /** PlaybackMetadata dashManifest. */
-            public dashManifest: string;
-
-            /** PlaybackMetadata sentiment. */
-            public sentiment: number;
-
-            /** PlaybackMetadata durationMs. */
-            public durationMs: number;
-
-            /** PlaybackMetadata videoID. */
-            public videoID: (number|Long);
-
-            /**
-             * Creates a new PlaybackMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns PlaybackMetadata instance
-             */
-            public static create(properties?: proto.BotAvatarMetadata.IPlaybackMetadata): proto.BotAvatarMetadata.PlaybackMetadata;
-
-            /**
-             * Encodes the specified PlaybackMetadata message. Does not implicitly {@link proto.BotAvatarMetadata.PlaybackMetadata.verify|verify} messages.
-             * @param message PlaybackMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: proto.BotAvatarMetadata.IPlaybackMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified PlaybackMetadata message, length delimited. Does not implicitly {@link proto.BotAvatarMetadata.PlaybackMetadata.verify|verify} messages.
-             * @param message PlaybackMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: proto.BotAvatarMetadata.IPlaybackMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a PlaybackMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns PlaybackMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.BotAvatarMetadata.PlaybackMetadata;
-
-            /**
-             * Decodes a PlaybackMetadata message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns PlaybackMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.BotAvatarMetadata.PlaybackMetadata;
-
-            /**
-             * Verifies a PlaybackMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a PlaybackMetadata message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns PlaybackMetadata
-             */
-            public static fromObject(object: { [k: string]: any }): proto.BotAvatarMetadata.PlaybackMetadata;
-
-            /**
-             * Creates a plain object from a PlaybackMetadata message. Also converts values to other types if specified.
-             * @param message PlaybackMetadata
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: proto.BotAvatarMetadata.PlaybackMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this PlaybackMetadata to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PlaybackMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
     }
 
     /** Properties of a BotMetadata. */
@@ -3860,6 +3730,12 @@ export namespace proto {
 
         /** ContextInfo utm */
         utm?: (proto.ContextInfo.IUTMInfo|null);
+
+        /** ContextInfo forwardedNewsletterMessageInfo */
+        forwardedNewsletterMessageInfo?: (proto.ContextInfo.IForwardedNewsletterMessageInfo|null);
+
+        /** ContextInfo businessMessageForwardInfo */
+        businessMessageForwardInfo?: (proto.ContextInfo.IBusinessMessageForwardInfo|null);
     }
 
     /** Represents a ContextInfo. */
@@ -3954,6 +3830,12 @@ export namespace proto {
 
         /** ContextInfo utm. */
         public utm?: (proto.ContextInfo.IUTMInfo|null);
+
+        /** ContextInfo forwardedNewsletterMessageInfo. */
+        public forwardedNewsletterMessageInfo?: (proto.ContextInfo.IForwardedNewsletterMessageInfo|null);
+
+        /** ContextInfo businessMessageForwardInfo. */
+        public businessMessageForwardInfo?: (proto.ContextInfo.IBusinessMessageForwardInfo|null);
 
         /**
          * Creates a new ContextInfo instance using the specified properties.
@@ -4160,6 +4042,103 @@ export namespace proto {
             }
         }
 
+        /** Properties of a BusinessMessageForwardInfo. */
+        interface IBusinessMessageForwardInfo {
+
+            /** BusinessMessageForwardInfo businessOwnerJid */
+            businessOwnerJid?: (string|null);
+        }
+
+        /** Represents a BusinessMessageForwardInfo. */
+        class BusinessMessageForwardInfo implements IBusinessMessageForwardInfo {
+
+            /**
+             * Constructs a new BusinessMessageForwardInfo.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: proto.ContextInfo.IBusinessMessageForwardInfo);
+
+            /** BusinessMessageForwardInfo businessOwnerJid. */
+            public businessOwnerJid: string;
+
+            /**
+             * Creates a new BusinessMessageForwardInfo instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BusinessMessageForwardInfo instance
+             */
+            public static create(properties?: proto.ContextInfo.IBusinessMessageForwardInfo): proto.ContextInfo.BusinessMessageForwardInfo;
+
+            /**
+             * Encodes the specified BusinessMessageForwardInfo message. Does not implicitly {@link proto.ContextInfo.BusinessMessageForwardInfo.verify|verify} messages.
+             * @param message BusinessMessageForwardInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: proto.ContextInfo.IBusinessMessageForwardInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified BusinessMessageForwardInfo message, length delimited. Does not implicitly {@link proto.ContextInfo.BusinessMessageForwardInfo.verify|verify} messages.
+             * @param message BusinessMessageForwardInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: proto.ContextInfo.IBusinessMessageForwardInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BusinessMessageForwardInfo message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BusinessMessageForwardInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ContextInfo.BusinessMessageForwardInfo;
+
+            /**
+             * Decodes a BusinessMessageForwardInfo message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns BusinessMessageForwardInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ContextInfo.BusinessMessageForwardInfo;
+
+            /**
+             * Verifies a BusinessMessageForwardInfo message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a BusinessMessageForwardInfo message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns BusinessMessageForwardInfo
+             */
+            public static fromObject(object: { [k: string]: any }): proto.ContextInfo.BusinessMessageForwardInfo;
+
+            /**
+             * Creates a plain object from a BusinessMessageForwardInfo message. Also converts values to other types if specified.
+             * @param message BusinessMessageForwardInfo
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: proto.ContextInfo.BusinessMessageForwardInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this BusinessMessageForwardInfo to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for BusinessMessageForwardInfo
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
         /** Properties of an ExternalAdReplyInfo. */
         interface IExternalAdReplyInfo {
 
@@ -4343,6 +4322,109 @@ export namespace proto {
                 IMAGE = 1,
                 VIDEO = 2
             }
+        }
+
+        /** Properties of a ForwardedNewsletterMessageInfo. */
+        interface IForwardedNewsletterMessageInfo {
+
+            /** ForwardedNewsletterMessageInfo newsletterJid */
+            newsletterJid?: (string|null);
+
+            /** ForwardedNewsletterMessageInfo serverMessageId */
+            serverMessageId?: (number|null);
+        }
+
+        /** Represents a ForwardedNewsletterMessageInfo. */
+        class ForwardedNewsletterMessageInfo implements IForwardedNewsletterMessageInfo {
+
+            /**
+             * Constructs a new ForwardedNewsletterMessageInfo.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: proto.ContextInfo.IForwardedNewsletterMessageInfo);
+
+            /** ForwardedNewsletterMessageInfo newsletterJid. */
+            public newsletterJid: string;
+
+            /** ForwardedNewsletterMessageInfo serverMessageId. */
+            public serverMessageId: number;
+
+            /**
+             * Creates a new ForwardedNewsletterMessageInfo instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ForwardedNewsletterMessageInfo instance
+             */
+            public static create(properties?: proto.ContextInfo.IForwardedNewsletterMessageInfo): proto.ContextInfo.ForwardedNewsletterMessageInfo;
+
+            /**
+             * Encodes the specified ForwardedNewsletterMessageInfo message. Does not implicitly {@link proto.ContextInfo.ForwardedNewsletterMessageInfo.verify|verify} messages.
+             * @param message ForwardedNewsletterMessageInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: proto.ContextInfo.IForwardedNewsletterMessageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ForwardedNewsletterMessageInfo message, length delimited. Does not implicitly {@link proto.ContextInfo.ForwardedNewsletterMessageInfo.verify|verify} messages.
+             * @param message ForwardedNewsletterMessageInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: proto.ContextInfo.IForwardedNewsletterMessageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ForwardedNewsletterMessageInfo message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ForwardedNewsletterMessageInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ContextInfo.ForwardedNewsletterMessageInfo;
+
+            /**
+             * Decodes a ForwardedNewsletterMessageInfo message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ForwardedNewsletterMessageInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ContextInfo.ForwardedNewsletterMessageInfo;
+
+            /**
+             * Verifies a ForwardedNewsletterMessageInfo message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ForwardedNewsletterMessageInfo message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ForwardedNewsletterMessageInfo
+             */
+            public static fromObject(object: { [k: string]: any }): proto.ContextInfo.ForwardedNewsletterMessageInfo;
+
+            /**
+             * Creates a plain object from a ForwardedNewsletterMessageInfo message. Also converts values to other types if specified.
+             * @param message ForwardedNewsletterMessageInfo
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: proto.ContextInfo.ForwardedNewsletterMessageInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ForwardedNewsletterMessageInfo to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for ForwardedNewsletterMessageInfo
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a UTMInfo. */
@@ -5420,7 +5502,8 @@ export namespace proto {
             WEAR_OS = 18,
             AR_WRIST = 19,
             AR_DEVICE = 20,
-            UWP = 21
+            UWP = 21,
+            VR = 22
         }
     }
 
@@ -5429,6 +5512,12 @@ export namespace proto {
 
         /** DisappearingMode initiator */
         initiator?: (proto.DisappearingMode.Initiator|null);
+
+        /** DisappearingMode trigger */
+        trigger?: (proto.DisappearingMode.Trigger|null);
+
+        /** DisappearingMode initiatorDeviceJid */
+        initiatorDeviceJid?: (string|null);
     }
 
     /** Represents a DisappearingMode. */
@@ -5442,6 +5531,12 @@ export namespace proto {
 
         /** DisappearingMode initiator. */
         public initiator: proto.DisappearingMode.Initiator;
+
+        /** DisappearingMode trigger. */
+        public trigger: proto.DisappearingMode.Trigger;
+
+        /** DisappearingMode initiatorDeviceJid. */
+        public initiatorDeviceJid: string;
 
         /**
          * Creates a new DisappearingMode instance using the specified properties.
@@ -5528,6 +5623,14 @@ export namespace proto {
             CHANGED_IN_CHAT = 0,
             INITIATED_BY_ME = 1,
             INITIATED_BY_OTHER = 2
+        }
+
+        /** Trigger enum. */
+        enum Trigger {
+            UNKNOWN = 0,
+            CHAT_SETTING = 1,
+            ACCOUNT_SETTING = 2,
+            BULK_CHANGE = 3
         }
     }
 
@@ -13556,6 +13659,9 @@ export namespace proto {
 
                 /** CarouselMessage cards */
                 cards?: (proto.Message.IInteractiveMessage[]|null);
+
+                /** CarouselMessage messageVersion */
+                messageVersion?: (number|null);
             }
 
             /** Represents a CarouselMessage. */
@@ -13569,6 +13675,9 @@ export namespace proto {
 
                 /** CarouselMessage cards. */
                 public cards: proto.Message.IInteractiveMessage[];
+
+                /** CarouselMessage messageVersion. */
+                public messageVersion: number;
 
                 /**
                  * Creates a new CarouselMessage instance using the specified properties.
@@ -21550,6 +21659,9 @@ export namespace proto {
 
         /** MsgOpaqueData encReactionEncIv */
         encReactionEncIv?: (Uint8Array|null);
+
+        /** MsgOpaqueData botMessageSecret */
+        botMessageSecret?: (Uint8Array|null);
     }
 
     /** Represents a MsgOpaqueData. */
@@ -21638,6 +21750,9 @@ export namespace proto {
 
         /** MsgOpaqueData encReactionEncIv. */
         public encReactionEncIv: Uint8Array;
+
+        /** MsgOpaqueData botMessageSecret. */
+        public botMessageSecret: Uint8Array;
 
         /**
          * Creates a new MsgOpaqueData instance using the specified properties.
